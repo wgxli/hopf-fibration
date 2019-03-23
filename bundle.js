@@ -49661,7 +49661,7 @@ function pointToColor(point) {
 	const lightness = 0.15 * point.y + 0.5;
 
 	const color = new THREE.Color();
-	color.setHSL((hue + 4 * lightness) % 1, 0.7, lightness);
+	color.setHSL((hue + 2 * lightness) % 1, 0.7, lightness);
 	return color;
 }
 
@@ -49746,6 +49746,7 @@ exports.addPoint = addPoint;
 
 
 // Demo
+/*
 for (var i = 10; i < 32; i++) {
 	const theta = 2*Math.PI * i/32;
     update(new THREE.Vector3(Math.cos(theta), 0, Math.sin(theta)));
@@ -49754,5 +49755,6 @@ for (var i = 10; i < 32; i++) {
     update(new THREE.Vector3(0.5 * Math.cos(theta), -Math.sqrt(3) / 2, 0.5 * Math.sin(theta)));
 	addPoint();
 }
+*/
 
 },{"three":3}]},{},[1]);

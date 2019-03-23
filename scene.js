@@ -171,6 +171,7 @@ exports.addPoint = addPoint;
 
 
 // Demo
+/*
 for (var i = 10; i < 32; i++) {
 	const theta = 2*Math.PI * i/32;
     update(new THREE.Vector3(Math.cos(theta), 0, Math.sin(theta)));
@@ -179,3 +180,4 @@ for (var i = 10; i < 32; i++) {
     update(new THREE.Vector3(0.5 * Math.cos(theta), -Math.sqrt(3) / 2, 0.5 * Math.sin(theta)));
 	addPoint();
 }
+*/
