@@ -135,7 +135,6 @@ scene.add(newFiber);
 // Lighting
 const light = new THREE.PointLight(0xffffff);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-light.position.set(0, 0, 5);
 scene.add(light);
 scene.add(ambientLight);
 
@@ -147,6 +146,20 @@ const sphereGeo = new THREE.SphereBufferGeometry(1, 32, 16);
 const sphereMaterial = new THREE.MeshLambertMaterial({color: 0x444444, transparent: true, opacity: 0.6});
 const sphere = new THREE.Mesh(sphereGeo, sphereMaterial);
 inset.add(sphere);
+
+const axesGeo = new THREE.BufferGeometry();
+const axesGeoPoints = new Float32Array([
+	0.0, 0.0, 0.0,
+	0.5, 0.0, 0.0,
+	0.0, 0.0, 0.0,
+	0.0, 0.5, 0.0,
+	0.0, 0.0, 0.0,
+	0.0, 0.0, 0.5,
+]);
+axesGeo.addAttribute('position', new THREE.BufferAttribute(axesGeoPoints, 3));
+const axesMaterial = new THREE.LineBasicMaterial({color: 0x888888, linewidth: 3});
+const axes = new THREE.LineSegments(axesGeo, axesMaterial);
+inset.add(axes);
 
 const newPointGeo = new THREE.SphereBufferGeometry(0.02, 32, 16);
 const newPointMaterial = new THREE.MeshBasicMaterial();

@@ -9,8 +9,9 @@ const INSET_SIZE = new THREE.Vector2(300, 300);
 
 const SCENE_POS = new THREE.Vector2(0, 0);
 const SCENE_SIZE = new THREE.Vector2(window.innerWidth, window.innerHeight);
+SCENE_SIZE.multiplyScalar(window.devicePixelRatio);
 
-const SIZE = new THREE.Vector2(window.innerWidth, window.innerHeight);
+const SIZE = SCENE_SIZE.clone();
 
 
 /***** Setup *****/
@@ -36,12 +37,14 @@ controls = new OrbitControls(camera);
 controls.enableDamping = true;
 controls.dampingFactor = 0.15;
 controls.rotateSpeed = 0.15;
+controls.enablePan = false;
 
 /***** Interactivity *****/
 
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2(1, 1);
 const clickFlag = new THREE.Vector2();
+var mobileFlag = false;
 
 function onResize(e) {
 	[SIZE.x, SIZE.y] = [window.innerWidth, window.innerHeight];
@@ -97,6 +100,8 @@ function onMouseDown(e) {
 }
 
 function onMouseUp(e) {
+	raycast();
+
 	const screenPos = new THREE.Vector2(e.pageX, e.pageY);
 	const distance = clickFlag.distanceTo(screenPos);
 
@@ -116,12 +121,30 @@ function raycast() {
 	}
 }
 
+function preventDefault(e) {
+	mobileFlag = true;
+	const tagName = e.target.tagName.toLowerCase();
+
+	if (tagName === 'canvas') {
+		if (e.touches.length > 1) {
+			e.preventDefault();
+		} else {
+			mouse.set(1, 1);
+		}
+	} else {
+		return e;
+	}
+}
+
+
 function addEventListeners() {
 	const canvas = document.getElementsByTagName('canvas')[0];
 	canvas.addEventListener('mousedown', onMouseDown);
 	canvas.addEventListener('mouseup', onMouseUp);
 	canvas.addEventListener('mousemove', onMouseMove);
 	window.addEventListener('resize', onResize);
+    document.addEventListener('gesturestart', preventDefault, {passive: false});
+    document.addEventListener('touchmove', preventDefault, {passive: false});
 }
 
 
