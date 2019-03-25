@@ -1,0 +1,34 @@
+{
+  "name": "hopf-fibration",
+  "version": "1.0.0",
+  "description": "Interactive visualization of the Hopf fibration.",
+  "main": "main.js",
+  "dependencies": {
+    "esmify": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "three": "^0.102.1",
+    "three-orbitcontrols": "^2.102.1",
+    "tinyify": "^2.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wgxli/hopf-fibration.git"
+  },
+  "keywords": [
+    "hopf",
+    "fibration",
+    "math",
+    "visualization"
+  ],
+  "author": "Samuel Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wgxli/hopf-fibration/issues"
+  },
+  "homepage": "https://github.com/wgxli/hopf-fibration#readme"
+}
