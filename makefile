@@ -1,2 +1,2 @@
 default: main.js
-	browserify main.js | uglifyjs > bundle.js
+	browserify main.js -p tinyify -o bundle.js
