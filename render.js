@@ -108,6 +108,11 @@ function onMouseUp(e) {
 	if (distance < 10) {
 		scene.addPoint();
 	}
+
+	if (mobileFlag) {
+		mouse.set(1, 1);
+		raycast();
+	}
 }
 
 function raycast() {
@@ -130,6 +135,7 @@ function preventDefault(e) {
 			e.preventDefault();
 		} else {
 			mouse.set(1, 1);
+			raycast();
 		}
 	} else {
 		return e;

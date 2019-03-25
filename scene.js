@@ -142,7 +142,7 @@ scene.add(ambientLight);
 /***** Inset Scene *****/
 const inset = new THREE.Scene();
 
-const sphereGeo = new THREE.SphereBufferGeometry(1, 32, 16);
+const sphereGeo = new THREE.SphereBufferGeometry(1, 64, 32);
 const sphereMaterial = new THREE.MeshLambertMaterial({color: 0x444444, transparent: true, opacity: 0.6});
 const sphere = new THREE.Mesh(sphereGeo, sphereMaterial);
 inset.add(sphere);
