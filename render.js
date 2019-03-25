@@ -9,13 +9,13 @@ const INSET_SIZE = new THREE.Vector2(300, 300);
 
 const SCENE_POS = new THREE.Vector2(0, 0);
 const SCENE_SIZE = new THREE.Vector2(window.innerWidth, window.innerHeight);
-SCENE_SIZE.multiplyScalar(window.devicePixelRatio);
 
 const SIZE = SCENE_SIZE.clone();
 
 
 /***** Setup *****/
 const renderer = new THREE.WebGLRenderer({'antialias': true});
+renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1)
 renderer.setSize(SIZE.x, SIZE.y);
 document.body.appendChild(renderer.domElement);
 
