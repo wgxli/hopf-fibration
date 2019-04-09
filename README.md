@@ -1,5 +1,5 @@
 # Hopf Fibration Visualization <img src="favicons/android-chrome-192x192.png" width=32 alt="App Icon">
-A responsive interactive visualization of the Hopf fibration.
+A responsive interactive [visualization](https://wgxli.github.io/hopf-fibration) of the Hopf fibration.
 
 ![Screenshot showing several fibers under the Hopf map.](images/screenshot.png)
 
