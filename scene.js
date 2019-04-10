@@ -3,6 +3,7 @@ const THREE = require('three');
 const defaultPoint = new THREE.Vector3(1, 0, 0);
 
 
+// Get discretized fiber over the given point
 function getFiberPoints(point = defaultPoint, divisions = 256) {
 	const alpha = Math.sqrt((1 + point.y)/2);
 	const beta = Math.sqrt((1 - point.y)/2);
@@ -25,6 +26,7 @@ function getFiberPoints(point = defaultPoint, divisions = 256) {
 	return Float32Array.from(points);
 }
 
+// Get fiber, rendered as torus, over the given point
 function getTorus(point = defaultPoint) {
 	const alpha = Math.sqrt((1 + point.y)/2);
 	const beta = Math.sqrt((1 - point.y)/2);
@@ -90,6 +92,7 @@ function pointToColor(point) {
 	return color;
 }
 
+// Update the scene based on the given selection of point on S^2
 function update(point) {
 	visible = (point !== undefined);
 
@@ -108,6 +111,7 @@ function update(point) {
 	}
 }
 
+// Add the currently selected point
 function addPoint() {
 	if (newPoint.visible) {
 		// Add new point
