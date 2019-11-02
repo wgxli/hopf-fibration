@@ -14,8 +14,8 @@ const SIZE = SCENE_SIZE.clone();
 
 
 /***** Setup *****/
-const renderer = new THREE.WebGLRenderer({'antialias': true});
-renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1)
+const renderer = new THREE.WebGLRenderer({antialias: true});
+renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
 renderer.setSize(SIZE.x, SIZE.y);
 document.body.appendChild(renderer.domElement);
 
