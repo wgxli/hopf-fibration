@@ -109,6 +109,7 @@ button#help {
 
     width: 36px;
     height: 36px;
+    padding: 0;
     border: 2px solid hsl(200, 10%, 80%);
     border-radius: 50%;
 
