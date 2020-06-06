@@ -9,28 +9,35 @@
     <meta name='description' content='Beautiful interactive visualization of the Hopf fibration.'/>
     <meta name='keywords' content='hopf,fibration,wgxli,visualization,interactive,webgl,threejs'/>
 
-	<link rel='manifest' href='./manifest.json'>
-	<link rel='shortcut icon' type='image/x-icon' href='./favicon.ico'/>
-	<link rel='apple-touch-icon' sizes='180x180' href='./favicons/apple-touch-icon.png'>
-	<link rel='icon' type='image/png' sizes='32x32' href='./favicons/favicon-32x32.png'>
-	<link rel='icon' type='image/png' sizes='16x16' href='./favicons/favicon-16x16.png'>
-	<link rel='mask-icon' href='./favicons/safari-pinned-tab.svg' color='#5bbad5'>
-	<meta name='msapplication-TileColor' content='#2b5797'>
-	<meta name='theme-color' content='#ffffff'>
+    <link rel='manifest' href='./manifest.json'>
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico'/>
+    <link rel='apple-touch-icon' sizes='180x180' href='./favicons/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='./favicons/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='./favicons/favicon-16x16.png'>
+    <link rel='mask-icon' href='./favicons/safari-pinned-tab.svg' color='#5bbad5'>
+    <meta name='msapplication-TileColor' content='#2b5797'>
+    <meta name='theme-color' content='#ffffff'>
 
-	<link rel='stylesheet' type='text/css' href='main.css'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <link rel='stylesheet' type='text/css' href='instructions.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123422297-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-123422297-1');
-	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123422297-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-123422297-1');
+    </script>
+
+    <!-- Load React. -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
   </head>
   <body>
-	<noscript><h1 id='webgl-fallback'>Please enable Javascript and WebGL to use the visualization.</h1></noscript>
+    <noscript><h1 id='webgl-fallback'>Please enable Javascript and WebGL to use the visualization.</h1></noscript>
+    <div id='react'></div>
     <script src='bundle.js'></script>
   </body>
 </html>

@@ -1,0 +1,151 @@
+#instructions-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#instructions-container.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#instructions-container.visible .instructions {
+    transform: none;
+}
+
+#instructions-container.hidden .instructions {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+#instructions-container .instructions {
+    background-color: hsl(200, 10%, 97%);
+    border-radius: 8px;
+
+    padding: 30px;
+    margin: 20px;
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid hsl(200, 10%, 80%);
+    box-shadow: 1px 1px 4px hsla(200, 10%, 10%, 0.3);
+
+    font-family: Roboto, sans-serif;
+
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+#instructions-container .instructions .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#instructions-container .instructions .logo {
+    height: 80px;
+    margin-right: 15px;
+}
+
+#instructions-container .instructions .header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    color: hsl(200, 10%, 20%);
+}
+
+#instructions-container .instructions .header .subtitle {
+    font-size: 14px;
+    margin-top: 8px;
+    color: hsl(200, 10%, 40%);
+}
+
+#instructions-container .instructions p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: hsl(200, 10%, 20%);
+    line-height: 1.5;
+}
+
+#instructions-container .instructions button.accept {
+    background-color: hsl(200, 60%, 50%);
+    padding: 12px 0;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 1px 1px 4px hsla(200, 10%, 10%, 0.3);
+
+    font-size: 18px;
+    font-family: Roboto, sans-serif;;
+    color: white;
+
+    margin-top: 16px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+#instructions-container .instructions button.accept:hover {
+    background-color: hsl(200, 60%, 45%);
+}
+
+button#help {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    background-color: hsla(200, 10%, 80%, 0.2);
+    backdrop-filter: blur(8px);
+
+    color: hsl(200, 10%, 80%);
+
+    font-family: Roboto, sans-serif;
+    font-size: 26px;
+
+    width: 36px;
+    height: 36px;
+    border: 2px solid hsl(200, 10%, 80%);
+    border-radius: 50%;
+
+    z-index: 50;
+}
+
+@media (min-width: 601px) {
+    #instructions-container .mobile {
+        display: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #instructions-container .desktop {
+        display: none !important;
+    }
+
+    #instructions-container .instructions {
+        padding: 20px;
+    }
+
+    #instructions-container .instructions .header h2 {
+        font-size: 20px;
+    }
+
+    #instructions-container .instructions .header .subtitle {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    #instructions-container .instructions p {
+        margin: 12px 0;
+        font-size: 14px;
+    }
+
+    #instructions-container .instructions button.accept {
+        padding: 10px 0;
+        margin-top: 10px;
+    }
+}
