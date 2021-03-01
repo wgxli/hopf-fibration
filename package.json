@@ -6,7 +6,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
-    "three": "^0.117.1",
+    "three": "^0.125.0",
     "three-orbitcontrols": "^2.110.3"
   },
   "devDependencies": {
